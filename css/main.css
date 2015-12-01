@@ -1,0 +1,50 @@
+/* 
+    Created on : 01-Aug-2014, 18:10:50
+    Author     : Richie
+*/
+
+.center{
+    text-align: center;
+    vertical-align: middle;
+}
+
+h2{
+    padding-top: 10px;
+}
+
+table, tr, td, th{
+    padding-right: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th{
+   background-color: activeborder; 
+}
+tr:nth-child(odd){
+    background-color: aliceblue;
+}
+tr:nth-child(even){
+    background-color: #a3fdfd;
+}
+
+#table-div{
+}
+
+#nameheader{
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#new-item-div {
+    padding-bottom: 10px;
+    background-color: activecaption;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+input:text{
+    width: 35%;
+}
