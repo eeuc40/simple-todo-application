@@ -45,18 +45,18 @@ THE SOFTWARE.
         $uid = $row['uid'];
 
         // Get all the Todo Items 
-        $results = json_decode(Todo::getAllItems($uid));
+        $items = json_decode(Todo::getAllItems($uid));
         ?>
         <div id='table-div'>
             <table id='table'>
                 <tr><th>Completed</th><th>Todo Item</th></tr>
                 <?php
-                foreach ($results as $id => $result) {
+                foreach ($items as $id => $item) {
                     $checked = "";
-                    if ($result[1] == 1) {
+                    if ($item[1] == 1) {
                         $checked = "checked";
                     }
-                    echo"<tr><td class='center'><input type='checkbox' name='completed' value='$id' $checked> </td><td>" . $result[0] . "</td></tr>";
+                    echo"<tr><td class='center'><input type='checkbox' name='completed' value='$id' $checked> </td><td>" . $item[0] . "</td></tr>";
                 }
                 ?>
             </table>
