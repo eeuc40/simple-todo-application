@@ -97,13 +97,13 @@ class Todo {
         self::$db->bind(":uid", $uid);
         self::$db->execute();
 
-        $array = array();
+        $items = array();
 
-        while ($row = self::$db->getRow()) {
-            $array[$row['id']] = array($row['todo'], $row['complete']);
+        while ($item = self::$db->getRow()) {
+            $items[$item['id']] = array($item['todo'], $item['complete']);
         }
         
-        return json_encode($array);
+        return json_encode($items);
     }
 
     /**
