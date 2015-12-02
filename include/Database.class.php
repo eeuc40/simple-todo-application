@@ -31,10 +31,10 @@
 class Database {
 
     private $host = 'localhost';
-    private $dbname = 'todo';
+    private $dbname = 'DATABASE_NAME';
     // Define the database's own user
-    private $user = 'todo1';
-    private $pass = 'GmUYPFVCxtenvvNh';
+    private $user = 'DATABASE_USER';
+    private $pass = 'DATABASE_PASSWORD';
     private $pdo;
     private $stmt;
     private $error;
