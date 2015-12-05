@@ -34,10 +34,10 @@ function addNewItem() {
         $.post('ajax-get-all-items.php', {uid: uid}, function(data) {
             var obj = $.parseJSON(data);
             // Find the last key in the JSON data
-            var lastKey = Object.keys(obj).sort().reverse()[0];
+            var lastKey = Object.keys(obj).reverse()[0];
             var lastValue = obj[lastKey];
             // Add a new Row to the table after the last table row
-            $('#table tr:last').after('<tr><td><input type="checkbox" name="completed" value="' + lastKey + '"></td><td>' + lastValue[0] + '</td></tr>');
+            $('#table tr:last').after('<tr><td class="center"><input type="checkbox" name="completed" value="' + lastKey + '"></td><td>' + lastValue[0] + '</td></tr>');
         });
     });
 
