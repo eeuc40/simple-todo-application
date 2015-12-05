@@ -37,7 +37,8 @@ function addNewItem() {
             var lastKey = Object.keys(obj).reverse()[0];
             var lastValue = obj[lastKey];
             // Add a new Row to the table after the last table row
-            $('#table tr:last').after('<tr><td class="center"><input type="checkbox" name="completed" value="' + lastKey + '"></td><td>' + lastValue[0] + '</td></tr>');
+            $('#table tr:last').after('<tr id="' + lastKey + '"><td class="center"><input type="checkbox" name="completed" value="' + lastKey + '"></td>\n\
+                <td>' + lastValue[0] + '</td><td><input type="submit" value="Delete Item" onclick="deleteItem('+lastKey+')" /></td></tr>');
         });
     });
 
@@ -52,6 +53,14 @@ function saveCompletedItems() {
 
     // AJAX call to complete the item in the TODO list
     $.post('ajax-complete-item.php', {checked: checked}, function(data) {
-        
+
+    });
+}
+
+function deleteItem(id) {
+    // AJAX call to remove the item from the TODO list
+    $.post('ajax-delete-item.php', {id: id}, function(data) {
+        // Lets remove the item from the DOM
+        $('#' + id).remove();
     });
 }

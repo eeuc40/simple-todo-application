@@ -107,12 +107,15 @@ class Todo {
     }
 
     /**
-     * Not implemented
+     * A function to remove the item from the todo list
      * 
-     * @param int $id
+     * @param int $id The id of the item
      */
     public static function removeItem($id) {
-        // TODO - Not required
+        self::databaseConnect();
+        self::$db->query("DELETE from item where id=:id");
+        self::$db->bind(":id", $id);
+        self::$db->execute();        
     }
 
     /**

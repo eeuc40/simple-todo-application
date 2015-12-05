@@ -1,5 +1,6 @@
 <?php
-/*
+
+/* 
  * The MIT License
  *
  * Copyright 2015 Richie.
@@ -25,8 +26,6 @@
 
 include('include/Todo.class.php');
 
-$checked =  $_POST['checked'];
+$id = $_POST['id'];
 
-foreach($checked as $itemId){
-    Todo::markComplete($itemId);
-}
+Todo::removeItem($id);

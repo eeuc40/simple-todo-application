@@ -49,14 +49,19 @@ THE SOFTWARE.
         ?>
         <div id='table-div'>
             <table id='table'>
-                <tr><th>Completed</th><th>Todo Item</th></tr>
+                <tr><th>Completed</th><th>Todo Item</th><th>Delete Item</th></tr>
                 <?php
                 foreach ($items as $id => $item) {
                     $checked = "";
                     if ($item[1] == 1) {
                         $checked = "checked";
                     }
-                    echo"<tr><td class='center'><input type='checkbox' name='completed' value='$id' $checked> </td><td>" . $item[0] . "</td></tr>";
+                    echo"<tr id='$id'>"
+                    . "<td class='center'>"
+                            . "<input type='checkbox' name='completed' value='$id' $checked>"
+                            . " </td>"
+                            . "<td>" . $item[0] . "</td>"
+                            . "<td><input type='submit' value='Delete Item' onclick='deleteItem($id)' /></td></tr>";
                 }
                 ?>
             </table>
